@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for m in messages %}
+    {{m}}
+    {% endfor %}
+    {{user.id}}
+    {{user.Name}}
+    {{user.Age}}
+    {{user.Photo}}
+    {{user.Email}}
+    {{user.Place}}
+    <img src="{{user.Photo.url}}" height="100px" width="200px">
+
+    <a href="{% url 'webapp:update' user.id %}">Update</a>
+    <a href="{% url 'webapp:delete' user.id %}">Delete</a>
+    <a href="{% url 'webapp:logout' %}">logout</a>
+
+   
+</body>
+</html>
